@@ -1,0 +1,40 @@
+
+.userActivityWidget {
+    background-color: #FFF;
+    width: 500px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.widgetHeader {
+    padding: 15px;
+    border-bottom: thin solid #E2E5EB;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.userBoxes {
+    padding: 10px 5px;
+}
+
+.titleText {
+    display: inline-block;
+    font-size: 18px;
+    color: #555;
+}
+
+.rightContainer {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+}
+.rightContainer > div {
+    display: inline-block;
+}
+
+.activityDurationText {
+    color: #7C909C;
+    margin-right: -5px;
+}

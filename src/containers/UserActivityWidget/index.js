@@ -5,6 +5,9 @@ import memoize from 'memoize-one';
 import { setSortOrder, setUserCount } from '../../reducers/userWidget';
 import UserBlock from '../../components/UserBlock';
 import userData from './data.json';
+import downArrow from './icons/down.svg';
+import settingsLogo from './icons/settings.svg';
+import './index.css';
 
 class UserActivityWidget extends React.Component {
     constructor(props) {
@@ -66,15 +69,33 @@ class UserActivityWidget extends React.Component {
       /* sort users according to state */
       let users = this.sortAndSlice(this.denormalizedData.users, sortOrder, userCount);
       return (
-        <div>
-          {users.map((item, i) => (
-            <UserBlock
-              userid={item.id}
-              name={item.fullname}
-              activity={item.daily}
-              key={item.id}
-            />
-          ))}
+        <div className="userActivityWidget">
+            <div className="widgetHeader">
+                <div className="titleText">
+                    Users activity
+                </div>
+                <div className="rightContainer">
+                    <div>
+                        <span className="activityDurationText">Weekly</span>
+                        <img src={downArrow} />
+
+                    </div>
+                    <div className="userWidgetSettings">
+                        <img src={settingsLogo} />
+                    </div>
+                </div>
+            </div>
+            <div className="userBoxes">
+                {users.map((item, i) => (
+                    <UserBlock
+                    userid={item.id}
+                    name={item.fullname}
+                    activity={item.weekly}
+                    key={item.id}
+                    />
+                ))}
+            </div>
+
           <div>
             <button onClick={() => this.setUserCount(3)}>
                 Make it 3
