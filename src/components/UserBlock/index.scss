@@ -1,0 +1,60 @@
+.userRow {
+    // border: thin solid #aaa;
+    padding: 5px 3px;
+    width: 500px;
+}
+
+.inlineBlock {
+    display: inline-block
+}
+
+.profilePicture {
+    @extend .inlineBlock;
+    margin-left: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border: thin solid #ddd;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.userName {
+    @extend .inlineBlock;
+    margin: 0px 0px 5px 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #3C4D64;
+    vertical-align: sub;
+}
+.rightShifted {
+    @extend .inlineBlock;
+    float: right;
+    margin-right: 15px;
+    top: 10px;
+    position: relative;
+}
+
+.userActivity {
+    @extend .inlineBlock;
+    color: #000;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+#progressbar {
+    @extend .inlineBlock;
+    width: 200px;
+    background-color: #D9DDE5;
+    margin-left: 25px;
+    vertical-align: sub;
+    right: 70px;
+    position: absolute;
+}
+
+#progressbar>div {
+    background-color: #6FBB78;
+    max-width: 100%;
+    position: relative;
+    /* Adjust with JavaScript */
+    height: 16px;
+}
