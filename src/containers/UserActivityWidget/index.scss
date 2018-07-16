@@ -7,34 +7,3 @@
     transition: 0.3s;
     border-radius: 5px;
 }
-
-.widgetHeader {
-    padding: 15px;
-    border-bottom: thin solid #E2E5EB;
-    font-family: 'Roboto', sans-serif;
-    position: relative;
-}
-
-.userBoxes {
-    padding: 10px 5px;
-}
-
-.titleText {
-    display: inline-block;
-    font-size: 18px;
-    color: #555;
-}
-
-.rightContainer {
-    display: inline-block;
-    position: absolute;
-    right: 15px;
-}
-.rightContainer > div {
-    display: inline-block;
-}
-
-.activityDurationText {
-    color: #7C909C;
-    margin-right: -5px;
-}
