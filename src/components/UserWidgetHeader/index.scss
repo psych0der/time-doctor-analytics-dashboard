@@ -1,0 +1,67 @@
+.widgetHeader {
+    padding: 15px;
+    border-bottom: thin solid #E2E5EB;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.userBoxes {
+    padding: 10px 5px;
+}
+
+.titleText {
+    display: inline-block;
+    font-size: 18px;
+    color: #555;
+}
+
+.rightContainer {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.rightContainer>div {
+    display: inline-block;
+}
+
+.activityDurationText {
+    color: #7C909C;
+    margin-right: -5px;
+}
+
+.hideIt {
+    display: none;
+}
+
+#userWidgetDropDown {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.userWidgetSettings {
+    position: relative;
+    width: 30px;
+    margin-left: -17px;
+    position: relative;
+}
+
+.userWidgetSettingsMenu {
+    position: relative;
+    left: -15px;
+}
+
+.userWidgetMenuItem>a {
+    color: #7188A0;
+}
+
+.userWidgetMenuItem>a:hover {
+    color: #FFF !important;
+    background: #697FA8 !important;
+}
+
+#userWidgetDropDown span.caret {
+    display: none;
+}
