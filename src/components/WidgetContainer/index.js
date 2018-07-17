@@ -1,13 +1,10 @@
 import React  from 'react';
 import { DropTarget } from 'react-dnd';
 import Types from '../../Types';
+import './index.css';
 
-
-
+/* Helpers to make widget container droppable */
 const widgetContainerTarget = {
-  // canDrop(props) {
-  //   return props.children === false;
-  // },
   drop(props, monitor) {
     let {type, containerId} = monitor.getItem();
     props.acceptDrop(type, containerId, props.widgetId);
@@ -23,18 +20,10 @@ function collect(connect, monitor) {
 
 export class WidgetContainer extends React.Component {
   render() {
-     const { connectDropTarget} = this.props;
-    const style = {
-      height: '350px',
-      width: '500px',
-      border: 'thin dashed black',
-      display: 'inline-block',
-      verticalAlign: 'top'
-    };
-
+    const { connectDropTarget} = this.props;
     return connectDropTarget(
-      <div style={style} className={this.props.widgetId}>
-        {!this.props.children && "Drop here"}
+      <div  className={`widgetContainer ${this.props.widgetId}`} style={this.props.children === false ? {} : {border:"none"}}>
+        {!this.props.children && (<div className="vCenter dropPlaceHolder">Drop Here</div>)}
         {this.props.children}
       </div>
     )

@@ -1,0 +1,21 @@
+.widgetContainer{
+    min-height: 271px;
+    width: 440px;
+    border: thin dashed #D9DDE5;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    border-radius: 5px;
+    margin: 10px;
+    position: relative;
+}
+.vCenter{
+    top: 47%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+}
+
+.dropPlaceHolder{
+    color: #C7CFDE;
+}
