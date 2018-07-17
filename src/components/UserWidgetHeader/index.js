@@ -25,7 +25,7 @@ const UserWidgetHeader = (props) => {
                                 className="userWidgetMenuItem"
                                 onSelect={props.showSettings}
                                 eventKey="1">Edit widget</MenuItem>
-                            <MenuItem className="userWidgetMenuItem" eventKey="2">Delete</MenuItem>
+                            <MenuItem className="userWidgetMenuItem" eventKey="2" onSelect={props.removeWidget}>Delete</MenuItem>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
