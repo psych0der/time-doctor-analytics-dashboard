@@ -1,9 +1,9 @@
-export const SET_NUMBER_OF_USERS = 'userwidget/SET_NUMBER_OF_USERS';
-export const SET_SORT_ORDER = 'userwidget/SET_SORT_ORDER';
+export const SET_NUMBER_OF_USERS = 'USERWIDGET/SET_NUMBER_OF_USERS';
+export const SET_SORT_ORDER = 'USERWIDGET/SET_SORT_ORDER';
 
 const initialState = {
   userCount: 5,
-  sortOrder: 'asc',
+  sortOrder: 'asc'
 };
 
 export default (state = initialState, action) => {
