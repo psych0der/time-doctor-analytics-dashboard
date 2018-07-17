@@ -1,7 +1,7 @@
 .userRow {
     // border: thin solid #aaa;
     padding: 5px 5px;
-    width: 500px;
+    width: 440px;
 }
 
 .inlineBlock {
@@ -10,9 +10,9 @@
 
 .profilePicture {
     @extend .inlineBlock;
-    margin-left: 5px;
-    width: 35px;
-    height: 35px;
+    margin-left: 3px;
+    width: 25px;
+    height: 25px;
     border-radius: 100%;
     border: thin solid #ddd;
     overflow: hidden;
@@ -29,8 +29,8 @@
 .rightShifted {
     @extend .inlineBlock;
     float: right;
-    margin-right: 15px;
-    top: 10px;
+    margin-right: 20px;
+    top: 8px;
     position: relative;
 }
 
@@ -43,9 +43,9 @@
 
 #progressbar {
     @extend .inlineBlock;
-    width: 200px;
+    width: 150px;
     background-color: #D9DDE5;
-    margin-left: 25px;
+    margin-left: 15px;
     vertical-align: sub;
     right: 70px;
     position: absolute;
