@@ -1,4 +1,3 @@
-import Types from '../Types';
 export const SET_WIDGET_DROPZONE = 'WIDGET_CONTAINER/SET_WIDGET_DROPZONE';
 export const EMPTY_CONTAINER = 'WIDGET_CONTAINER/EMPTY_CONTAINER';
 
@@ -10,7 +9,7 @@ export const MOVE_WIDGET = 'WIDGET_CONTAINER/MOVE_WIDGET';
     Currently it is empty as no widget is present on app start
 */
 const initialState = {
-    'widget-container-1': Types.USER_WIDGET
+
 };
 
 export default (state = initialState, action) => {
@@ -22,7 +21,7 @@ export default (state = initialState, action) => {
             };
 
         case EMPTY_CONTAINER:
-            let { [action.containerKey]: deletedItem, ...rest } = state;
+            let { [action.containerKey]: widgetType, ...rest } = state;
             return rest;
 
         case MOVE_WIDGET:
@@ -46,10 +45,10 @@ export const setWidgetDropZone = (containerKey, widgetType) => (dispatch) => {
 };
 
 // set sorting order
-export const emptyContainer = containerkey => (dispatch) => {
+export const emptyContainer = containerKey => (dispatch) => {
     dispatch({
         type: EMPTY_CONTAINER,
-        containerkey,
+        containerKey,
     });
 };
 
