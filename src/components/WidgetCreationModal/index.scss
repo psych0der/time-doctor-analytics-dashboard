@@ -1,0 +1,19 @@
+.modalTitle{
+    color: #536276;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.modalComponent{
+    background-color: #F3F6F7;
+}
+
+
+.modalHeader{
+    @extend .modalComponent;
+}
+
+.widgetDescription{
+    display: inline-block;
+    margin-left: 20%;
+}
