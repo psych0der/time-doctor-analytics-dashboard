@@ -4,16 +4,38 @@ import {connect} from 'react-redux';
 import memoize from 'memoize-one';
 import {setSortOrder, setUserCount} from '../../reducers/userWidget';
 import UserWidgetHeader from '../../components/UserWidgetHeader';
+import UserWidgetSettingsHeader from '../../components/UserWidgetSettingsHeader';
+import UserWidgetSettings from '../../components/UserWidgetSettings';
 import UserBlock from '../../components/UserBlock';
 import userData from './data.json';
+import Types from '../../Types';
+import { DragSource } from 'react-dnd';
 import './index.css';
+
+/* Methods to enable UserActivityWidget draggable */
+const userWidgetSource = {
+  beginDrag(props) {
+    return {type: Types.USER_WIDGET, containerId: props.containerId};
+  }
+};
+
+function collect(connect, monitor) {
+  return {
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging()
+  }
+}
 
 class UserActivityWidget extends React.Component {
   constructor(props) {
     super(props)
     this.normalizedData = userData;
+    this.type = Types.USER_WIDGET;
     this.denormalizedData = {
       users: []
+    };
+    this.state = {
+      'displayMode': 'view'
     };
   }
 
@@ -71,17 +93,44 @@ class UserActivityWidget extends React.Component {
       .setSortOrder(sortOrder);
   }
 
+  displaySettingsForm = () => {
+    this.setState({'displayMode': 'settings'})
+  }
+  displayViewCard = () => {
+    this.setState({'displayMode': 'view'})
+  }
+
+  setSettingsValue = (userCount, sortOrder) => {
+    this.setSortOrder(sortOrder);
+    this.setUserCount(userCount);
+  }
+
   clickDropDown = () => {}
 
   render() {
-    let {sortOrder, userCount} = this.props;
-    /* sort users according to state */
-    let users = this.sortAndSlice(this.denormalizedData.users, sortOrder, userCount);
-    return (
-      <div>
+    const {connectDragSource, isDragging} = this.props;
 
-        <div className="userActivityWidget">
-          <UserWidgetHeader/>
+    // custom styling for widget container
+    let style = {
+      opacity: 1,
+      cursor: 'move'
+    };
+
+    if (isDragging) {
+      style['opacity'] = 0.5;
+    }
+    let {displayMode} = this.state;
+    let displayNode = null;
+
+    if (displayMode === 'view') {
+      let {sortOrder, userCount} = this.props;
+      /* sort users according to state */
+      let users = this.sortAndSlice(this.denormalizedData.users, sortOrder, userCount);
+      displayNode = (
+        <div>
+          <UserWidgetHeader
+            showSettings={this.displaySettingsForm}
+            showCardView={this.showCardView}/>
           <div className="userBoxes">
             {users.map((item, i) => (<UserBlock
               userid={item.id}
@@ -89,26 +138,30 @@ class UserActivityWidget extends React.Component {
               activity={item.weekly}
               key={item.id}/>))}
           </div>
-
-          <div>
-            <button onClick={() => this.setUserCount(3)}>
-              Make it 3
-            </button>
-            <button onClick={() => this.setUserCount(5)}>
-              Make it 3
-            </button>
-            <button onClick={() => this.setSortOrder('dsc')}>
-              DSC
-            </button>
-            <button onClick={() => this.setSortOrder('asc')}>
-              ASC
-            </button>
-          </div>
         </div>
 
-      </div>
+      );
+    } else {
+      displayNode = (
+        <div>
+          <UserWidgetSettingsHeader/>
+          <UserWidgetSettings
+            maxUserCount={this.denormalizedData.users.length}
+            closeSettingsForm={this.displayViewCard}
+            updateValues={this.setSettingsValue}
+            sortOrder={this.props.sortOrder}
+            userCount={this.props.userCount}/>
+        </div>
+      )
+    }
 
-    );
+    return (connectDragSource(
+      <div style={style}>
+        <div className="userActivityWidget">
+          {displayNode}
+        </div>
+      </div>
+    ));
   }
 }
 
@@ -119,4 +172,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   setUserCount
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserActivityWidget);
+let draggableUserActivityWidget = DragSource(Types.USER_WIDGET, userWidgetSource, collect)(UserActivityWidget);
+
+export default connect(mapStateToProps, mapDispatchToProps)(draggableUserActivityWidget);
+
