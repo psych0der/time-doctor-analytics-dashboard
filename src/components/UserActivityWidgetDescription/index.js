@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Types from '../../Types';
 import addWidget from '../../commons/assets/icons/add-widget.svg';
 import removeWidget from '../../commons/assets/icons/remove-widget.svg';
@@ -84,6 +85,13 @@ export class UserActivityWidgetDescription extends React.Component {
 
     }
 
+}
+
+UserActivityWidgetDescription.propTypes = {
+    widgetContainerState: PropTypes.object.isRequired,
+    addWidget: PropTypes.func.isRequired,
+    setRevertAction: PropTypes.func.isRequired,
+    emptyContainer: PropTypes.func.isRequired,
 }
 
 export default UserActivityWidgetDescription;

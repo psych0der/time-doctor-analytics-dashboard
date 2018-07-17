@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import {Modal} from 'react-bootstrap';
 import {UserActivityWidgetDescription} from '../../components';
 import saveIcon from '../../commons/assets/icons/save.svg';
@@ -65,6 +66,14 @@ export class WidgetCreationModal extends React.Component {
             </div>
         )
     }
+}
+
+WidgetCreationModal.propTypes = {
+    widgetContainerState: PropTypes.object.isRequired,
+    addWidget: PropTypes.func.isRequired,
+    emptyContainer: PropTypes.func.isRequired,
+    closeModal: PropTypes.func.isRequired,
+    show: PropTypes.bool.isRequired
 }
 
 export default WidgetCreationModal;

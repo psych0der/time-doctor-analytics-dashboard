@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types';
 import './index.css';
 
 // User Block dumb component
@@ -20,5 +20,10 @@ const UserBlock = props => {
 
         </div>
     );
+}
+UserBlock.propTypes = {
+    userid: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    activity: PropTypes.number.isRequired
 }
 export default UserBlock;

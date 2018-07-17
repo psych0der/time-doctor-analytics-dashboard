@@ -1,4 +1,5 @@
 import React  from 'react';
+import PropTypes from 'prop-types';
 import { DropTarget } from 'react-dnd';
 import Types from '../../Types';
 import './index.css';
@@ -30,6 +31,10 @@ export class WidgetContainer extends React.Component {
   }
 }
 
+WidgetContainer.propTypes = {
+  widgetId: PropTypes.string.isRequired,
+  connectDropTarget: PropTypes.func.isRequired
+}
 
 // Wrap widget container to make it droppable
 export default DropTarget(Types.USER_WIDGET, widgetContainerTarget, collect)(WidgetContainer);

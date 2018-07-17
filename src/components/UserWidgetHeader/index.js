@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import downArrow from './icons/down.svg';
 import settingsLogo from './icons/settings.svg';
 import {Dropdown, MenuItem} from 'react-bootstrap';
@@ -32,6 +33,11 @@ const UserWidgetHeader = (props) => {
             </div>
         </div>
     )
+}
+
+UserWidgetHeader.propTypes = {
+    showSettings: PropTypes.func.isRequired,
+    removeWidget: PropTypes.func.isRequired
 }
 
 export default UserWidgetHeader;

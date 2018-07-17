@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import memoize from 'memoize-one';
@@ -165,6 +166,14 @@ class UserActivityWidget extends React.Component {
       </div>
     ));
   }
+}
+
+UserActivityWidget.propTypes = {
+  sortOrder: PropTypes.string.isRequired,
+  userCount: PropTypes.number.isRequired,
+  setSortOrder: PropTypes.func.isRequired,
+  setUserCount: PropTypes.func.isRequired,
+  connectDragSource: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = ({userWidget}) => ({userCount: userWidget.userCount, sortOrder: userWidget.sortOrder});

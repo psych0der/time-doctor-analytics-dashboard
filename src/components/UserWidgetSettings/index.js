@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Radio, FormGroup, FormControl, ControlLabel,
 } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import saveIcon from '../../commons/assets/icons/save.svg';
 import cancelIcon from '../../commons/assets/icons/cancel.svg';
 import NumericInput from 'react-numeric-input';
@@ -115,6 +116,14 @@ class UserWidgetSettings extends React.Component {
             </form>
         )
     }
+}
+
+UserWidgetSettings.propTypes = {
+    userCount: PropTypes.number.isRequired,
+    sortOrder: PropTypes.string.isRequired,
+    maxUserCount: PropTypes.number.isRequired,
+    closeSettingsForm: PropTypes.func.isRequired,
+    updateValues: PropTypes.func.isRequired
 }
 
 export default UserWidgetSettings

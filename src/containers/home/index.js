@@ -1,6 +1,5 @@
 import React from 'react'
-// import WidgetContainer from '../../components/WidgetContainer';
-// import DashboardHeader from '../../components/DashboardHeader';
+import PropTypes from 'prop-types';
 import {WidgetContainer, DashboardHeader, WidgetCreationModal} from '../../components';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -60,6 +59,7 @@ export class Home extends React.Component {
         }
       />
       <div className="dropzoneContainer">
+       {/* Currently we want to have 6 drop zones, hence this array */}
         {[1, 2, 3, 4,5,6].map((item) => (
           <WidgetContainer acceptDrop={(widgetType, previousContainer)=> {this.props.moveWidget(widgetType, previousContainer, `${containerKeyPrefix}${item}`, this.props.emptyContainer); }}    widgetId={`${containerKeyPrefix}${item}`} key={`widget-${item}`}>
             {
@@ -73,9 +73,14 @@ export class Home extends React.Component {
 
     </div>
   )
-  // layout is an array of objects, see the demo for more complete usage
   }
 
+}
+
+Home.propTypes = {
+  moveWidget: PropTypes.func.isRequired,
+  emptyContainer: PropTypes.func.isRequired,
+  setWidgetDropZone: PropTypes.func.isRequired
 }
 
 const mapStateToProps = ({widgetContainer}) => ({widgetContainer});

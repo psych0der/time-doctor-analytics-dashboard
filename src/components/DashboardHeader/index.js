@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import addWidget from '../../commons/assets/icons/add-widget.svg';
 import './index.css';
 
@@ -15,6 +16,10 @@ const DashboardHeader = props => {
             </div>
         </header>
     )
+}
+
+DashboardHeader.propTypes = {
+    openModal: PropTypes.func.isRequired
 }
 
 export default DashboardHeader;
