@@ -1,20 +1,22 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import Home from '../home'
-import About from '../about'
+// import About from '../about'
 
-const App = () => (
-  <div>
-    <header>
-      <Link to="/">Home</Link>
-      <Link to="/about-us">About</Link>
-    </header>
+import {DragDropContext} from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
-    <main>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about-us" component={About} />
-    </main>
-  </div>
-)
+ export class App extends React.Component {
+  render() {
+    return (
+      <div>
+        {/* display Home at default path as of now */}
+        <main>
+          <Route exact path="/" component={Home}/>
+        </main>
+      </div>
+    )
+  }
+}
 
-export default App
+export default DragDropContext(HTML5Backend)(App);
