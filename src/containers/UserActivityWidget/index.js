@@ -47,7 +47,7 @@ class UserActivityWidget extends React.Component {
     /* user denormalized data as source */
     let users = data.slice();
     users.sort((a, b) => {
-      if (sortOrder === 'asc') {
+      if (sortOrder === 'dsc') {
         return b.weekly - a.weekly;
       }
       return a.weekly - b.weekly;
@@ -130,7 +130,9 @@ class UserActivityWidget extends React.Component {
         <div>
           <UserWidgetHeader
             showSettings={this.displaySettingsForm}
-            showCardView={this.showCardView}/>
+            showCardView={this.showCardView}
+            removeWidget={this.props.removeWidget}
+          />
           <div className="userBoxes">
             {users.map((item, i) => (<UserBlock
               userid={item.id}
