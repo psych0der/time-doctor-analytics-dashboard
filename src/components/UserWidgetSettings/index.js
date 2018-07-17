@@ -1,10 +1,9 @@
 import React from 'react';
 import {
     Radio, FormGroup, FormControl, ControlLabel,
-    // Button
 } from 'react-bootstrap';
-import saveIcon from './icons/save.svg';
-import cancelIcon from './icons/cancel.svg';
+import saveIcon from '../../commons/assets/icons/save.svg';
+import cancelIcon from '../../commons/assets/icons/cancel.svg';
 import NumericInput from 'react-numeric-input';
 import './index.css';
 
@@ -33,7 +32,6 @@ class UserWidgetSettings extends React.Component {
 
     render() {
         let {userCount, sortOrder} = this.state;
-        console.log(this.state);
         return (
             <form
                 className="userWidgetSettingsForm"
