@@ -162,3 +162,4 @@ DevTools are not enabled during production.
 ### [Scope for improvement](#scope-for-improvement)
 - Pass data to widgets instead of loading
 - Number of grids should be dynamic
+- Better UX for state buttons such as save button in add dashboard option
