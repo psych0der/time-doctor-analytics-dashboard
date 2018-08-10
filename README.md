@@ -24,9 +24,13 @@ allows the end-user to:
 
 ----
 
-# Table of contents
+### Table of contents
 
-- [Table of contents](#table-of-contents)
+- [Time doctor dashboard prototype](#time-doctor-dashboard-prototype)
+    - [React/Redux experiments](#reactredux-experiments)
+    - [Problem statement](#problem-statement)
+- [TODO](#todo)
+    - [Table of contents](#table-of-contents)
     - [Usage](#usage)
     - [Redux](#redux)
     - [Using Redux DevTools](#using-redux-devtools)
@@ -156,8 +160,8 @@ DevTools are not enabled during production.
 
 ### [What I loved most](#What-I-loved-most)
 
-- Dropable grids using [ReactDnd](https://github.com/react-dnd/react-dnd)
-- Draggable dashboard widgets
+- Creating dropable grids using [ReactDnd](https://github.com/react-dnd/react-dnd)
+- Creating draggable dashboard widgets
 
 ### [Scope for improvement](#scope-for-improvement)
 - Pass data to widgets instead of loading
