@@ -77,59 +77,59 @@ DevTools are not enabled during production.
 
 ```
 
-├── public
-│   ├── user-avatars
+├── public
+│   ├── user-avatars
 │   ├── favicon.ico
 │   ├── index.html
 │   └── manifest.json
-├── src
-│   ├── Types
+├── src
+│   ├── Types
 │   │   └── index.js
-│   ├── commons
-│   │   ├── assets
-│   │   │   ├── icons
-│   │   │   │   └── save.svg
-│   ├── components
-│   │   ├── DashboardHeader
+│   ├── commons
+│   │   ├── assets
+│   │   │   ├── icons
+│   │   │   │   └── save.svg
+│   ├── components
+│   │   ├── DashboardHeader
 │   │   │   ├── index.js
 │   │   │   └── index.scss
-│   │   ├── UserActivityWidgetDescription
+│   │   ├── UserActivityWidgetDescription
 │   │   │   ├── index.js
 │   │   │   └── index.scss
-│   │   ├── UserBlock
+│   │   ├── UserBlock
 │   │   │   ├── index.js
 │   │   │   └── index.scss
-│   │   ├── UserWidgetHeader
-│   │   │   ├── icons
-│   │   │   │   ├── down.svg
-│   │   │   │   └── settings.svg
+│   │   ├── UserWidgetHeader
+│   │   │   ├── icons
+│   │   │   │   ├── down.svg
+│   │   │   │   └── settings.svg
 │   │   │   ├── index.js
 │   │   │   └── index.scss
-│   │   ├── UserWidgetSettings
+│   │   ├── UserWidgetSettings
 │   │   │   ├── index.js
 │   │   │   └── index.scss
-│   │   ├── UserWidgetSettingsHeader
+│   │   ├── UserWidgetSettingsHeader
 │   │   │   ├── index.js
 │   │   │   └── index.scss
-│   │   ├── WidgetContainer
+│   │   ├── WidgetContainer
 │   │   │   ├── index.js
 │   │   │   └── index.scss
-│   │   ├── WidgetCreationModal
+│   │   ├── WidgetCreationModal
 │   │   │   ├── index.js
 │   │   │   └── index.scss
 │   │   └── index.js
-│   ├── containers
-│   │   ├── App
+│   ├── containers
+│   │   ├── App
 │   │   │   └── index.js
-│   │   ├── Home
+│   │   ├── Home
 │   │   │   ├── index.js
 │   │   │   └── index.scss
-│   │   ├── UserActivityWidget
+│   │   ├── UserActivityWidget
 │   │   │   ├── data.json
 │   │   │   ├── index.js
 │   │   │   └── index.scss
 │   │   └── index.js
-│   ├── reducers
+│   ├── reducers
 │   │   ├── index.js
 │   │   ├── userWidget.js
 │   │   └── widgetContainer.js
